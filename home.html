@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 40px;
+        background-color: #f9f9f9;
+        color: #333;
+        display: flex; 
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    header {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+        margin: 20px;
+    }
+
+    h2 {
+        text-align: justify;
+        margin: 50px 50px;
+        font-weight: normal;
+    }
+
+    button {
+        background-color: #2F3590;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 15px;
+        font-size: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 10px 20px;
+        
+    }
+
+    button:hover {
+        background-color: #4A5BD0;
+        transform: scale(1.05);
+    }
+    
+</style>
+<body>
+
+    <header>
+        <h1>Jacob Personal Website <br>
+            <span style="color: #d5d2d2;">Final Assessment</span></h1>
+    </header>
+    <h2> Hello! Welcome to my personal website. This was made by <strong>Marc Vincent Jacob</strong> wherein it serves as his <strong>final assessment</strong> for his Introduction to Computing Class. He is enrolled under <strong>Sir. Geralde</strong> in his <strong>4-301, 7:40 AM-9:10 AM Monday Wednesday &  9:50 AM - 11:50 AM F610 Friday class.</strong> 
+        <br><br>In this website, you will be able to see the learner’s assignments, which are: <br><br>
+        <strong>- Assignment #1</strong> - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)<br> <br>
+        <strong>- Assignment #2</strong> - Income Tax Calculator <br> <br>
+        <strong>- Assignment #3</strong> - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers<br> <br>
+        <strong>- Assignment #4</strong> - Simple Payroll.</h2>
+    
+    <h2><strong>Explore the assignments below to get started:</strong></h2>
+    <button onclick="converter()">Converter</button><br>
+    <button onclick="tax()">Income Tax Calculator</button><br>
+    <button onclick="nProgram()">n Program</button><br>
+    <button onclick="payroll()">Simple Payroll</button><br>
+
+<script>
+    function converter(){
+        window.location.href = "conversion.html";
+    }
+
+    function tax(){
+        window.location.href = "IncomeTaxCalculator.html";
+    }
+
+    function nProgram(){
+        window.location.href = "nProgram.html";
+    }
+
+    function payroll(){
+        window.location.href = "payroll.html";
+    }
+
+</script>
+
+</body>
+</html>

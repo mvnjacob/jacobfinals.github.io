@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</h1>
+
+<p>
+<h2> Input Value: </h2>
+<label for="value">Value: </label> 
+<input id="value" name="value" type="number">
+</p>
+
+<div>
+<h2> Select conversion type: </h2>
+<select id="conversionType" name="example">
+  <option value="FtoC">Fahrenheit to Celsius</option>
+  <option value="CtoF">Celsius to Fahrenheit</option>
+  <option value="MtoF">Meters to Feet</option>
+  <option value="FtoM">Feet to Meters</option>
+</select>
+</div>
+
+<p>
+<button onclick="convertValue()"> Convert Value </button>
+</p>
+
+<p>
+<label for="conv" id="convlabel">The converted value is:</label>  
+<input id="conv" name="conv" type="number" readonly></input>
+</p>
+
+<script>
+function convertValue() {
+    // Get the input value
+    let x = document.getElementById("value").value * 1;
+    
+    // Get the selected conversion type
+    let conversionType = document.getElementById("conversionType").value;
+    
+    // Initialize the converted value
+    let y;
+
+    // Perform the conversion based on the selected type
+    if (conversionType === "FtoC") {
+        y = (x - 32) * 5 / 9; // Fahrenheit to Celsius
+    } else if (conversionType === "CtoF") {
+        y = (x * 9 / 5) + 32; // Celsius to Fahrenheit
+    } else if (conversionType === "MtoF") {
+        y = x * 3.28084; // Meters to Feet
+    } else if (conversionType === "FtoM") {
+        y = x / 3.28084; // Feet to Meters
+    } else {
+        y = NaN; // Handle unexpected cases
+    }
+
+    // Set the converted value in the output input
+    document.getElementById("conv").value = y.toFixed(2); // Round to 2 decimal places
+
+    // Display the result with the label
+    document.getElementById("convlabel").innerHTML = 'The converted value of ' + x + ' is:';
+}
+</script>
+
+</body>
+</html>
