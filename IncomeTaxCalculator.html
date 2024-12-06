@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        }
+
+        header {
+        background-color: #3b5998;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            
+        }
+
+        nav a:hover {
+            background-color: #3b5998;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #2F3590;
+            margin: 0 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+            
+        }
+
+        input[readonly] {
+            background-color: #f0f0f0;
+        }
+
+        select {
+            margin: 10px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            background-color: #2F3590;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #2F3590;
+        }
+    </style>
+<body>
+    <header>
+        <h1>Jacob Personal Website <br>
+            <span style="color: #d5d2d2;">Final Assessment</span></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="conversion.html">Conversion</a>
+        <a href="IncomeTaxCalculator.html">Income Tax Calculator</a>
+        <a href="nProgram.html">n Program</a>
+        <a href="payroll.html">Simple Payroll</a>
+    </nav>
+
+<h1><span style="color: #2F3590;"> Income Tax Calculator Program</span></h1>
+
+<p>
+
+<label for="income">Input Amount of Net Taxable Income: </label> 
+<input id="income" name="income" type="number" oninput="convertTax()">
+</p>
+
+<p>
+<label for="tax" id="taxlabel">The income tax is:</label>  
+<input id="tax" name="tax" type="number" readonly></input>
+</p>
+
+<script>
+function convertTax() {
+    let x = document.getElementById("income").value * 1;
+    let y;
+
+    if (250000 > x && x > 0){
+        y = 0;
+    } else if (400000 > x && x > 250000){
+        y = (x - 250000) * 0.20
+    } else if (800000 > x && x > 400000){
+        y = ((x - 400000) * 0.25) + 30000
+    } else if (2000000 > x && x > 800000){
+        y = ((x - 800000) * 0.30) + 130000
+    } else if (8000000 > x && x > 2000000){
+        y = ((x - 2000000) * 0.32) + 490000
+    } else if (x > 8000000){
+        y = ((x - 8000000) * 0.35) + 2410000
+    }
+
+    document.getElementById("tax").value = y.toFixed(2); 
+    document.getElementById("taxlabel").innerHTML = 'The income tax of ' + x + ' is:';
+}
+</script>
+
+</body>
+</html>

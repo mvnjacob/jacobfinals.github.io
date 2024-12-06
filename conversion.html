@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        }
+
+        header {
+        background-color: #3b5998;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            
+        }
+
+        nav a:hover {
+            background-color: #3b5998;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #2F3590;
+            margin: 0 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+            
+        }
+
+        input[readonly] {
+            background-color: #f0f0f0;
+        }
+
+        select {
+            margin: 10px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            background-color: #2F3590;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #2F3590;
+        }
+    </style>
+<body>
+    <header>
+        <h1>Jacob Personal Website <br>
+            <span style="color: #d5d2d2;">Final Assessment</span></h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="conversion.html">Conversion</a>
+        <a href="IncomeTaxCalculator.html">Income Tax Calculator</a>
+        <a href="nProgram.html">n Program</a>
+        <a href="payroll.html">Simple Payroll</a>
+    </nav>
+
+<h1><span style="color: #2F3590;"> Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</span></h1>
+
+<p>
+<h2> Input Value: </h2>
+<label for="value">Value: </label> 
+<input id="value" name="value" type="number" oninput="convertValue()">
+</p>
+
+<div>
+<h2> Select conversion type: </h2>
+<select id="conversionType" name="example" oninput="convertValue()">
+  <option value="FtoC">Fahrenheit to Celsius</option>
+  <option value="CtoF">Celsius to Fahrenheit</option>
+  <option value="MtoF">Meters to Feet</option>
+  <option value="FtoM">Feet to Meters</option>
+</select>
+</div>
+
+<p>
+<label for="conv" id="convlabel">The converted value is:</label>  
+<input id="conv" name="conv" type="number" readonly></input>
+</p>
+
+<script>
+function convertValue() {
+    let x = document.getElementById("value").value * 1;
+    let conversionType = document.getElementById("conversionType").value;
+    let y;
+
+    if (conversionType === "FtoC") {
+        y = (x - 32) * 5 / 9;
+    } else if (conversionType === "CtoF") {
+        y = (x * 9 / 5) + 32;
+    } else if (conversionType === "MtoF") {
+        y = x * 3.28084;
+    } else if (conversionType === "FtoM") {
+        y = x / 3.28084;
+    } else {
+        y = NaN;
+    }
+
+    document.getElementById("conv").value = y.toFixed(2);
+    document.getElementById("convlabel").innerHTML = 'The converted value of ' + x + ' is:';
+}
+</script>
+
+</body>
+</html>
